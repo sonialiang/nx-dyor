@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  ui:
+    image: admin-ui:v5
+    ports:
+      - '4200:4200'
+    environment:
+      NEXT_PUBLIC_API_URL: 'http://api:3333'
+  api:
+    image: admin-api:v7
+    environment:
+      DATABASE_URL: 'postgresql://world:$DATABASE_PASSWORD@db:5432/admin-api?schema=public'
+    ports:
+      - '3333:3333'
+    depends_on:
+      - db
+  db:
+    image: ghusta/postgres-world-db:2.6
+    ports:
+      - '5432:5432'

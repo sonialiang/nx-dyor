@@ -5,6 +5,7 @@
     "admin-api": "packages/admin-api",
     "admin-ui": "packages/admin-ui",
     "admin-ui-e2e": "packages/admin-ui-e2e",
-    "ui": "packages/ui"
+    "ui": "packages/ui",
+    "users": "packages/users"
   }
 }

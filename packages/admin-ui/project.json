@@ -16,7 +16,8 @@
           "outputPath": "packages/admin-ui"
         },
         "production": {}
-      }
+      },
+      "generatePackageJson": true
     },
     "serve": {
       "executor": "@nrwl/next:server",
