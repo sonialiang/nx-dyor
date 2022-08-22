@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
+  "configurations": [
+    {
+      "name": "client-portal-webapp",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": [
+        "run",
+        "nx",
+        "run",
+        "admin-ui:serve",
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "protocol": "inspector",
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart",
+      "console": "internalConsole",
+      "env": {
+        "TS_NODE_IGNORE": "false",
+        "TS_NODE_PROJECT": "${workspaceFolder}/packages/admin-ui/tsconfig.json"
+      },
+      "cwd": "${workspaceFolder}/packages/admin-ui/"
+    },
+    {
+			"name": "foo-bar client-side",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:4200",
+			"webRoot": "${workspaceFolder}",
+			"sourceMapPathOverrides": {
+				"webpack://_N_E/*": "${webRoot}/packages/admin-ui/*",
+				"webpack://_N_E/libs/*": "${webRoot}/libs/*",
+				"webpack://_N_E/node_modules/*": "${webRoot}/node_modules/*"
+			}
+		}
+  ]
+}
