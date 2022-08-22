@@ -1,4 +1,15 @@
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+// import { useTranslation } from 'next-i18next';
+
 import styles from './index.module.css';
+
+// export async function getStaticProps({ locale }) {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ['common'])),
+//     },
+//   };
+// }
 
 export function Index() {
   /*
@@ -6,6 +17,8 @@ export function Index() {
    *
    * Note: The corresponding styles are in the ./index.css file.
    */
+  // const { t } = useTranslation();
+
   return (
     <div className={styles.page}>
       <div className="wrapper">
@@ -14,6 +27,7 @@ export function Index() {
             <h1>
               <span> Hello there, </span>
               Welcome admin-ui 👋
+              {/* {t('welcome_msg')} */}
             </h1>
           </div>
 

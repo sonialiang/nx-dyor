@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Login } from '@dyor/ui';
+import { appWithTranslation } from 'next-i18next';
 
 import './styles.css';
 
@@ -24,11 +24,10 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <main className="app">
         <p>{users}</p>
-        <Login />
-        {/* <Component {...pageProps} /> */}
+        <Component {...pageProps} />
       </main>
     </>
   );
 }
 
-export default CustomApp;
+export default appWithTranslation(CustomApp);
